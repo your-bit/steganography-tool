@@ -65,235 +65,215 @@ python -m http.server 8000
 
 ---
 
-⚡ Methods
+🔬 Methods Comparison
 
-Method	Stealth	Capacity	Speed	Best For
+ —————————————————————————————————————————————————————————————————————————————————————
+|    Method      |   Stealth  |   Capacity  |  Speed  |           Best For            |
+|—————————————————————————————————————————————————————————————————————————————————————|
+| Basic LSB      | ⭐⭐⭐⭐⭐ |~12.5%       | Fast    | High secrecy, small files     |
+| Enhanced LSB   | ⭐⭐⭐⭐   | 25%         | Medium  | Balance of stealth & capacity |
+| File Append    | ⭐⭐       | Unlimited   | Instant | Large files, educational use  |
 
-Basic LSB	⭐⭐⭐⭐⭐	~12.5%	Fast	Maximum secrecy, small files
-Enhanced LSB	⭐⭐⭐⭐	~25%	Medium	Balanced performance
-File Append	⭐⭐	Unlimited	Instant	Educational use, large files
+Method Details
 
+🔍 Basic LSB (Least Significant Bit)
 
-🧩 Basic LSB (Least Significant Bit)
-
+```javascript
+// Hides data in the least significant bits
 pixel = (pixel & 0xFE) | dataBit
+```
 
-Maximum stealth, visually undetectable
+· Maximum stealth - virtually undetectable visually
+· Lower capacity - ideal for text files and small documents
+· Best for - confidential messages, sensitive data
 
-Lower capacity, ideal for small hidden files
+⚡ Enhanced LSB (2-bit Encoding)
 
-
-⚙️ Enhanced LSB (2-bit Encoding)
-
+```javascript
+// Uses 2 bits per channel for double capacity
 pixel = (pixel & 0xFC) | dataBits
+```
 
-2× the capacity of Basic LSB
-
-Slight image quality tradeoff
-
+· Balanced approach - good stealth with improved capacity
+· 2x capacity of Basic LSB
+· Best for - medium-sized files, documents
 
 💾 File Append Method
 
+```javascript
+// Appends data after image with custom header
 [IMAGE_DATA] + [HEADER] + [SECRET_DATA]
+```
 
-Up to 100MB capacity
+· Maximum capacity - support for files up to 100MB
+· Fast processing - instant encoding/decoding
+· Best for - educational purposes, large files
 
-Easily detectable (for study/testing use)
+🛠️ Tech Stack
 
-Best for large file demonstrations
+<div align="center">
 
+Layer Technology Purpose
+Frontend HTML5, CSS3, JavaScript Core application
+Styling CSS Grid & Flexbox Responsive layout
+Processing Canvas API Image manipulation
+Icons Unicode Emojis Modern iconography
+Font Inter (Google Fonts) Typography
+Deployment GitHub Pages Hosting
 
+</div>
 
----
+Architecture
 
-🔍 How It Works
-
-1. Basic LSB – Hides 1 bit per RGB channel
-
-
-2. Enhanced LSB – Hides 2 bits per RGB channel
-
-
-3. File Append – Attaches data at the end of the image file with a header
-
-
-
-🧠 All encoding and decoding are handled locally using browser APIs (Canvas + FileReader).
-No server communication, no uploads.
-
-
----
+```
+steganography-tool/
+├── 📁 css/
+│   └── style.css            # Professional dark theme
+├── 📁 js/
+│   ├── steganography.js     # Core algorithms (3 methods)
+│   ├── ui.js                # User interface logic
+│   └── theme.js             # Visual effects & animations
+├── 📁 assets/
+│   └── main-theme.jpg       # Background theme
+├── index.html            # Single-page application
+└── README.md             # Documentation
+```
 
 📖 Usage Guide
 
-Encoding
+Encoding Files
 
-1. Select a method (Basic / Enhanced / Append)
+1. Select Method - Choose based on your security and capacity needs
+2. Upload Cover Image - Select a high-quality PNG image
+3. Choose File to Hide - Any file type supported
+4. Set Password (Optional) - For additional security
+5. Process & Download - Get your secure stego image
 
+Decoding Files
 
-2. Upload your cover image
+1. Upload Stego Image - Image with hidden data
+2. Enter Password - If encrypted during encoding
+3. Extract & Download - Retrieve your original file
 
+Pro Tips 💡
 
-3. Upload your secret file
-
-
-4. (Optional) Enter a password
-
-
-5. Click Hide File in Image and download the stego image
-
-
-
-Decoding
-
-1. Upload the stego image
-
-
-2. (Optional) Enter the password
-
-
-3. Click Extract Hidden File and download your extracted data
-
-
-
-💡 Pro Tips
-
-Always use PNG format for lossless images
-
-Use Basic LSB for secret text/documents
-
-Use File Append for large or demo files
-
-Test decoding before sharing images
-
-
-
----
-
-🧱 Tech Stack
-
-Layer	Technology	Purpose
-
-Frontend	HTML5, CSS3, JavaScript	Core web application
-Styling	CSS Grid & Flexbox	Responsive layout
-Logic	Canvas API	Image manipulation
-UI/UX	Vanilla JS	Smooth animations
-Fonts	Inter (Google Fonts)	Clean typography
-Deployment	GitHub Pages	Free static hosting
-
-
-
----
-
-🧠 Architecture
-
-steganography-tool/
-├── css/
-│   └── style.css
-├── js/
-│   ├── steganography.js
-│   ├── ui.js
-│   └── theme.js
-├── assets/
-│   └── main-theme.jpg
-├── index.html
-└── README.md
-
-
----
+· Use PNG format for cover images (lossless compression)
+· Basic LSB for maximum stealth with small files
+· File Append for quick sharing of large educational files
+· Always test extraction before sharing stego images
 
 🌐 Browser Support
 
-Browser	Version	Support
+Browser Version Support
+Chrome  60+  ✅ Full Support
+Firefox 55+  ✅ Full Support
+Safari  11+  ✅ Full Support
+Edge    79+  ✅ Full Support
 
-Chrome	60+	✅
-Firefox	55+	✅
-Safari	11+	✅
-Edge	 79+	✅
+Requirements: Modern browser with Canvas and File API support.
 
+🐛 Troubleshooting
 
-> Works on all modern browsers supporting Canvas & File APIs.
+Common Issues & Solutions
 
+Issue Cause Solution
+File too large Exceeds method capacity Use File Append method
+Browser crashes Large image processing Use smaller images or Basic LSB
+Extraction fails Wrong password/method Verify password and original method
+Quality loss Enhanced LSB on low-quality images Use high-quality PNG images
 
+Performance Notes
 
+· Basic LSB: Optimal for images under 5MP
+· Enhanced LSB: Best for images 5-10MP
+· File Append: No practical size limits (browser-dependent)
 
----
+🤝 Contributing
 
-🧰 Troubleshooting
+We love contributions! Here's how you can help:
 
-Issue	Cause	Solution
+Development Setup
 
-File too large	Exceeds method capacity	Use File Append
-Extraction fails	Wrong password or method	Verify correct settings
-Image quality drops	Using Enhanced LSB	Use higher-res PNG
-Browser crashes	Processing very large images	Reduce image size
+```bash
+# 1. Fork the repository
+# 2. Clone your fork
+git clone https://github.com/your-username/steganography-tool.git
 
+# 3. Create a feature branch
+git checkout -b feature/amazing-feature
 
+# 4. Make your changes and test
+# 5. Commit your changes
+git commit -m "Add amazing feature"
 
----
+# 6. Push to your fork
+git push origin feature/amazing-feature
+
+# 7. Create a Pull Request
+```
+
+Areas for Contribution
+
+· 🔧 New steganography algorithms
+· 🎨 UI/UX improvements
+· 📱 Mobile responsiveness
+· 🧪 Testing and bug fixes
+· 📚 Documentation improvements
 
 ⚠️ Disclaimer
 
-This tool is built for educational and research purposes only.
-Do NOT use it for illegal or unethical activities.
+Educational Purpose Only
 
-✅ Acceptable Use
+This tool is developed exclusively for educational and research purposes in the field of cybersecurity and digital forensics.
 
-Academic and research projects
+Acceptable Use
 
-Cybersecurity education
+· ✅ Academic research and teaching
+· ✅ Cybersecurity education
+· ✅ Digital forensics training
+· ✅ Personal learning and experimentation
 
-Digital forensics learning
+Prohibited Use
 
-Personal experimentation
+· ❌ Illegal or malicious activities
+· ❌ Copyright infringement
+· ❌ Data theft or espionage
+· ❌ Malware distribution
 
-
-❌ Prohibited Use
-
-Illegal or malicious actions
-
-Copyright or data theft
-
-Malware embedding
-
-Espionage or covert data hiding
-
-
-> Use this tool responsibly and ethically.
-
-
-
-
----
+Users are solely responsible for complying with local laws and regulations.
 
 📜 License
 
-This project is licensed under the MIT License.
-
-
----
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 👨‍💻 Author
 
-D.Chyper — Cybersecurity Enthusiast 🇮🇩
+D.Chyper - Cybersecurity Enthusiast & Full-Stack Developer
 
-🧭 Indonesian User Explorer
+· 🏠 Indonesian Developer
+· 🔭 Passionate about security research
+· 💻 Open source contributor
+· 🎓 Computer Science Student
 
-💻 Open Source Contributor
+Connect with Me
 
-🎓 Computer Engineering Student
+· GitHub: @your-bit
+· Project Link: https://github.com/your-bit/steganography-tool
 
-🧠 Passionate about cybersecurity research
+🙏 Acknowledgments
 
-
-GitHub: @your-bit
-Project: Steganography Tool
-
+· Inspired by digital forensics and cybersecurity research
+· Built for the global security community
+· Special thanks to open source contributors
+· Shoutout to the Inter font family for beautiful typography
 
 ---
 
-<div align="center">⭐ If this project helped you, give it a star!
-“Knowledge is power, but responsibility is key.” — D.Chyper
+<div align="center">
+
+⭐ If this project helped you, give it a star!
+
+"Knowledge is power, but responsibility is key" - D.Chyper
 
 </div>
 ```
