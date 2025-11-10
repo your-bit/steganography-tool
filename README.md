@@ -70,7 +70,6 @@ open index.html
 python -m http.server 8000
 # Visit http://localhost:8000
 
-
 ---
 
 ⚡ Methods
@@ -84,35 +83,35 @@ File Append	⭐⭐	Unlimited	Instant	Large or educational file hiding
 
 🔍 Basic LSB (Least Significant Bit)
 
-pixel = (pixel & 0xFE) | dataBit
+• pixel = (pixel & 0xFE) | dataBit
 
-Maximum stealth, visually undetectable
+• Maximum stealth, visually undetectable
 
-Lower capacity (best for small files)
+• Lower capacity (best for small files)
 
-Ideal for sensitive messages or documents
+• Ideal for sensitive messages or documents
 
 
 ⚡ Enhanced LSB (2-bit Encoding)
 
-pixel = (pixel & 0xFC) | dataBits
+• pixel = (pixel & 0xFC) | dataBits
 
-Twice the capacity of Basic LSB
+• Twice the capacity of Basic LSB
 
-Slightly reduces image quality
+• Slightly reduces image quality
 
-Ideal for medium files
+• Ideal for medium files
 
 
 💾 File Append Method
 
 [IMAGE_DATA] + [HEADER] + [SECRET_DATA]
 
-Maximum capacity (supports up to 100MB)
+• Maximum capacity (supports up to 100MB)
 
-Easily detectable (for educational purposes)
+• Easily detectable (for educational purposes)
 
-Great for quick tests and demonstrations
+• Great for quick tests and demonstrations
 
 
 
@@ -169,13 +168,13 @@ Decoding Files
 
 💡 Pro Tips
 
-Always use PNG format for cover images (lossless compression)
+• Always use PNG format for cover images (lossless compression)
 
-Use Basic LSB for small confidential files
+• Use Basic LSB for small confidential files
 
-Use File Append for large or test files
+• Use File Append for large or test files
 
-Test extraction before sharing images
+• Test extraction before sharing images
 
 
 
@@ -220,7 +219,7 @@ Browser	Version	Support
 Chrome	60+	✅ Full
 Firefox	55+	✅ Full
 Safari	11+	✅ Full
-Edge	79+	✅ Full
+Edge	  79+	✅ Full
 
 
 🧩 Requires a modern browser with Canvas and File API support.
@@ -247,24 +246,24 @@ This tool is built for educational and research purposes only in cybersecurity a
 
 ✅ Acceptable Use
 
-Academic & research projects
+• Academic & research projects
 
-Cybersecurity education
+• Cybersecurity education
 
-Digital forensics study
+• Digital forensics study
 
-Personal learning
+• Personal learning
 
 
 ❌ Prohibited Use
 
-Illegal or malicious activities
+• Illegal or malicious activities
 
-Copyright/data theft
+• Copyright/data theft
 
-Malware embedding
+• Malware embedding
 
-Espionage or unauthorized hiding
+• Espionage or unauthorized hiding
 
 
 Use this tool responsibly and ethically.
@@ -283,13 +282,13 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 D.Chyper — Cybersecurity Enthusiast 🇮🇩
 
-🏠 Indonesian User Explorer
+• 🏠 Indonesian User Explorer
 
-💻 Open Source Contributor
+• 💻 Open Source Contributor
 
-🎓 Computer Engineering Student
+• 🎓 Computer Engineering Student
 
-🔭 Passionate about digital security research
+• 🔭 Passionate about digital security research
 
 
 GitHub: @your-bit
