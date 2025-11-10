@@ -31,14 +31,27 @@ body {
     padding: 0 20px;
 }
 
-/* Hero Section */
+/* Hero Section dengan Background Image */
 .hero-section {
     position: relative;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%), 
+                url('../assets/main-theme.jpg') center/cover no-repeat;
     min-height: 70vh;
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/main-theme.jpg') center/cover no-repeat;
+    opacity: 0.4; /* Adjust opacity untuk efek subtle */
+    z-index: 1;
 }
 
 .hero-content {
@@ -594,4 +607,33 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
     }
+/* Indonesian Text Styling */
+.indonesian-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 3px solid var(--accent-blue);
+    padding-left: 1rem;
+    margin-top: 0.8rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Update edu-card untuk accommodate dua bahasa */
+.edu-card h4 {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.edu-card p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
 }
