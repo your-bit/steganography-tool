@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Pro | Secure File Hiding</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <header class="main-header">
+                <div class="logo">
+                    <span class="logo-icon">🔒</span>
+                    <span class="logo-text">SteganoPro</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#methods" class="nav-link">Methods</a>
+                    <a href="#github" class="nav-link">GitHub</a>
+                </nav>
+            </header>
+
+            <div class="hero-content">
+                <h1 class="hero-title">Advanced Steganography Toolkit</h1>
+                <p class="hero-subtitle">Hide files securely within images using three advanced methods</p>
+                <div class="hero-badges">
+                    <span class="badge">🔐 Secure</span>
+                    <span class="badge">⚡ Fast</span>
+                    <span class="badge">🎯 Educational</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="main-app">
+        <div class="container">
+            <!-- Method Selection -->
+            <div class="method-section">
+                <h2 class="section-title">Select Steganography Method</h2>
+                <div class="method-cards">
+                    <div class="method-card active" data-method="basicLSB">
+                        <div class="method-icon">🔍</div>
+                        <h3>Basic LSB</h3>
+                        <p>Maximum stealth, lower capacity</p>
+                        <div class="method-specs">
+                            <span class="spec">Stealth: ⭐⭐⭐⭐⭐</span>
+                            <span class="spec">Capacity: ~12.5%</span>
+                            <span class="spec">Max: 2-5MB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="method-card" data-method="enhancedLSB">
+                        <div class="method-icon">⚡</div>
+                        <h3>Enhanced LSB</h3>
+                        <p>Balanced approach, 2-bit encoding</p>
+                        <div class="method-specs">
+                            <span class="spec">Stealth: ⭐⭐⭐⭐</span>
+                            <span class="spec">Capacity: ~25%</span>
+                            <span class="spec">Max: 5-10MB</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card" data-method="fileAppend">
+                        <div class="method-icon">💾</div>
+                        <h3>File Append</h3>
+                        <p>Maximum capacity, lower stealth</p>
+                        <div class="method-specs">
+                            <span class="spec">Stealth: ⭐⭐</span>
+                            <span class="spec">Capacity: Unlimited</span>
+                            <span class="spec">Max: 50-100MB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capacity Calculator -->
+            <div class="capacity-section">
+                <h3>Capacity Calculator</h3>
+                <div class="capacity-info">
+                    <div class="capacity-item">
+                        <span class="capacity-label">Image Dimensions:</span>
+                        <span id="imageDimensions" class="capacity-value">-</span>
+                    </div>
+                    <div class="capacity-item">
+                        <span class="capacity-label">Basic LSB Capacity:</span>
+                        <span id="basicCapacity" class="capacity-value">-</span>
+                    </div>
+                    <div class="capacity-item">
+                        <span class="capacity-label">Enhanced LSB Capacity:</span>
+                        <span id="enhancedCapacity" class="capacity-value">-</span>
+                    </div>
+                    <div class="capacity-item">
+                        <span class="capacity-label">File Append Capacity:</span>
+                        <span id="appendCapacity" class="capacity-value">Unlimited (max 100MB)</span>
+                    </div>
+                </div>
+                <div id="capacityWarning" class="capacity-warning"></div>
+            </div>
+
+            <!-- Main Application Tabs -->
+            <div class="app-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchAppTab('encode')">
+                        <span class="tab-icon">📁</span>
+                        Hide File
+                    </button>
+                    <button class="tab-btn" onclick="switchAppTab('decode')">
+                        <span class="tab-icon">🔍</span>
+                        Extract File
+                    </button>
+                </div>
+
+                <!-- Encode Tab -->
+                <div id="encodeTab" class="tab-content active">
+                    <div class="upload-area">
+                        <div class="upload-section">
+                            <h4>1. Select Cover Image</h4>
+                            <div class="file-upload-box" id="coverUpload">
+                                <div class="upload-placeholder">
+                                    <span class="upload-icon">🖼️</span>
+                                    <p>Drag & drop cover image or click to browse</p>
+                                    <span class="upload-hint">PNG, JPG, BMP (Max: 10MB)</span>
+                                </div>
+                                <input type="file" id="coverImage" accept="image/png,image/jpeg,image/bmp" class="file-input">
+                            </div>
+                        </div>
+
+                        <div class="upload-section">
+                            <h4>2. File to Hide</h4>
+                            <div class="file-upload-box" id="secretUpload">
+                                <div class="upload-placeholder">
+                                    <span class="upload-icon">📄</span>
+                                    <p>Drag & drop file to hide or click to browse</p>
+                                    <span class="upload-hint">Any file type</span>
+                                </div>
+                                <input type="file" id="secretFile" class="file-input">
+                            </div>
+                        </div>
+
+                        <div class="security-options">
+                            <h4>3. Security Options</h4>
+                            <div class="option-group">
+                                <label class="option-label">
+                                    <input type="password" id="encodePassword" placeholder="Encryption password (optional)" class="password-input">
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="encodeBtn" class="primary-btn" onclick="encodeFile()">
+                            <span class="btn-icon">🛡️</span>
+                            Hide File in Image
+                        </button>
+                    </div>
+
+                    <div id="encodeResult" class="result-section hidden">
+                        <h4>Success! File Hidden</h4>
+                        <div class="result-preview">
+                            <img id="encodedImage" class="result-image">
+                            <div class="result-info">
+                                <p>File successfully hidden using <span id="usedMethod">Basic LSB</span></p>
+                                <button onclick="downloadResult()" class="secondary-btn">
+                                    <span class="btn-icon">💾</span>
+                                    Download Secure Image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decode Tab -->
+                <div id="decodeTab" class="tab-content">
+                    <div class="upload-area">
+                        <div class="upload-section">
+                            <h4>1. Upload Image with Hidden File</h4>
+                            <div class="file-upload-box" id="stegoUpload">
+                                <div class="upload-placeholder">
+                                    <span class="upload-icon">🔍</span>
+                                    <p>Drag & drop steganography image</p>
+                                    <span class="upload-hint">PNG format recommended</span>
+                                </div>
+                                <input type="file" id="stegoImage" accept="image/png,image/jpeg,image/bmp" class="file-input">
+                            </div>
+                        </div>
+
+                        <div class="security-options">
+                            <h4>2. Decryption Key</h4>
+                            <div class="option-group">
+                                <label class="option-label">
+                                    <input type="password" id="decodePassword" placeholder="Enter password if encrypted" class="password-input">
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="decodeBtn" class="primary-btn" onclick="decodeFile()">
+                            <span class="btn-icon">🔓</span>
+                            Extract Hidden File
+                        </button>
+                    </div>
+
+                    <div id="decodeResult" class="result-section hidden">
+                        <h4>File Extracted Successfully</h4>
+                        <div class="result-info">
+                            <div id="fileInfo" class="file-info">
+                                <!-- File info will be populated here -->
+                            </div>
+                            <button onclick="downloadExtractedFile()" class="secondary-btn">
+                                <span class="btn-icon">💾</span>
+                                Download Extracted File
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Section -->
+            <div id="about" class="educational-section">
+                <h2 class="section-title">About Steganography</h2>
+                <div class="edu-content">
+                    <div class="edu-card">
+                        <h3>🔒 What is Steganography?</h3>
+                        <p>Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video.</p>
+                    </div>
+                    <div class="edu-card">
+                        <h3>⚡ Three Methods</h3>
+                        <p>Basic LSB (max stealth), Enhanced LSB (balanced), and File Append (max capacity) for different use cases.</p>
+                    </div>
+                    <div class="edu-card">
+                        <h3>🎯 Educational Purpose</h3>
+                        <p>This tool is created for educational purposes to help students and researchers understand digital security concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SteganoPro</h4>
+                    <p>Advanced steganography toolkit for educational and research purposes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Important Notice</h4>
+                    <p>⚠️ This tool is for educational purposes only. Use responsibly and ethically.</p>
+                </div>
+                <div id="github" class="footer-section">
+                    <h4>GitHub</h4>
+                    <p>View source code and contribute to the project.</p>
+                    <a href="#" class="github-link">View Repository</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Steganography Pro Tool. Educational Purpose Only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/steganography.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+                      </html>
