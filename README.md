@@ -180,7 +180,7 @@ Deployment	GitHub Pages	Free static hosting
 
 ---
 
-🧩 Architecture
+<br>🧩 Architecture
 
 steganography-tool/
 ├── css/
