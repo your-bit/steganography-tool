@@ -183,6 +183,7 @@ Deployment	GitHub Pages	Free static hosting
 
 ---
 
+
 🧠 Architecture
 
 steganography-tool/
@@ -197,7 +198,7 @@ steganography-tool/
 ├── index.html
 └── README.md
 
----
+
 
 🌐 Browser Support
 
