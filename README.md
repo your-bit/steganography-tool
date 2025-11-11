@@ -197,7 +197,7 @@ steganography-tool/
 
 ---
 
-🌐 Browser Support
+<br>🌐 Browser Support
 
 Browser	Version	Support
 
@@ -291,5 +291,3 @@ Project: Steganography Tool
 “Knowledge is power, but responsibility is key.” — D.Chyper
 
 </div>
-```
----
