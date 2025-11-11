@@ -22,18 +22,13 @@
   <img src="https://img.shields.io/badge/security-steganography-orange.svg" alt="Security"/>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/your-bit/steganography-tool?style=social" alt="GitHub stars"/>
-  <img src="https://img.shields.io/github/forks/your-bit/steganography-tool?style=social" alt="GitHub forks"/>
-  <img src="https://img.shields.io/github/issues/your-bit/steganography-tool" alt="GitHub issues"/>
-</p>
-
 ---
 
 ## 🧠 Overview
 
 **Steganography Pro** is a browser-based steganography toolkit that allows you to hide any file within an image using three distinct methods — **Basic LSB**, **Enhanced LSB**, and **File Append**.  
-Everything runs locally on your browser using the **Canvas API**, ensuring no data leaves your device.
+
+Everything runs locally on your browser using the **Canvas API**, ensuring no data leaves your device.  
 
 ---
 
@@ -50,8 +45,10 @@ Everything runs locally on your browser using the **Canvas API**, ensuring no da
 
 ## 🚀 Quick Start
 
-### 🧩 Online Demo
+### 🧩 Online Demo  
 👉 [GitHub Pages Live Demo](https://your-bit.github.io/steganography-tool)
+
+<br>
 
 ### ⚙️ Local Setup
 ```bash
@@ -65,14 +62,14 @@ python -m http.server 8000
 
 ⚡ Methods
 
-Method	      Stealth	    Capacity	 Speed	  Best For
+Method	Stealth	Capacity	Speed	Best For
 
-Basic LSB	    ⭐⭐⭐⭐⭐	~12.5%	   Fast	    Maximum secrecy, small files
-Enhanced LSB	⭐⭐⭐⭐	  ~25%	     Medium	  Balanced performance
-File Append	  ⭐⭐	      Unlimited	 Instant	Educational use, large files
+Basic LSB	⭐⭐⭐⭐⭐	~12.5%	Fast	Maximum secrecy, small files
+Enhanced LSB	⭐⭐⭐⭐	~25%	Medium	Balanced performance
+File Append	⭐⭐	Unlimited	Instant	Educational use, large files
 
 
-🧩 Basic LSB (Least Significant Bit)
+<br>🧩 Basic LSB (Least Significant Bit)
 
 pixel = (pixel & 0xFE) | dataBit
 
@@ -81,7 +78,7 @@ Maximum stealth, visually undetectable
 Lower capacity, ideal for small hidden files
 
 
-⚙️ Enhanced LSB (2-bit Encoding)
+<br>⚙️ Enhanced LSB (2-bit Encoding)
 
 pixel = (pixel & 0xFC) | dataBits
 
@@ -90,7 +87,7 @@ pixel = (pixel & 0xFC) | dataBits
 Slight image quality tradeoff
 
 
-💾 File Append Method
+<br>💾 File Append Method
 
 [IMAGE_DATA] + [HEADER] + [SECRET_DATA]
 
@@ -124,7 +121,7 @@ No server communication, no uploads.
 
 📖 Usage Guide
 
-Encoding
+🧱 Encoding
 
 1. Select a method (Basic / Enhanced / Append)
 
@@ -142,7 +139,7 @@ Encoding
 
 
 
-Decoding
+<br>🔓 Decoding
 
 1. Upload the stego image
 
@@ -154,15 +151,15 @@ Decoding
 
 
 
-💡 Pro Tips
+<br>💡 Pro Tips
 
-Always use PNG format for lossless images
+Use PNG format for lossless compression
 
-Use Basic LSB for secret text/documents
+Use Basic LSB for confidential text or documents
 
-Use File Append for large or demo files
+Use File Append for larger files or testing
 
-Test decoding before sharing images
+Always test decoding before sharing images
 
 
 
@@ -175,7 +172,7 @@ Layer	Technology	Purpose
 Frontend	HTML5, CSS3, JavaScript	Core web application
 Styling	CSS Grid & Flexbox	Responsive layout
 Logic	Canvas API	Image manipulation
-UI/UX	Vanilla JS	Smooth animations
+UI/UX	Vanilla JS	Lightweight animations
 Fonts	Inter (Google Fonts)	Clean typography
 Deployment	GitHub Pages	Free static hosting
 
@@ -183,8 +180,7 @@ Deployment	GitHub Pages	Free static hosting
 
 ---
 
-
-🧠 Architecture
+🧩 Architecture
 
 steganography-tool/
 ├── css/
@@ -199,6 +195,7 @@ steganography-tool/
 └── README.md
 
 
+---
 
 🌐 Browser Support
 
@@ -223,8 +220,8 @@ Issue	Cause	Solution
 
 File too large	Exceeds method capacity	Use File Append
 Extraction fails	Wrong password or method	Verify correct settings
-Image quality drops	Using Enhanced LSB	Use higher-res PNG
-Browser crashes	Processing very large images	Reduce image size
+Image quality drops	Enhanced LSB on low-res image	Use high-quality PNG
+Browser crash	Large image processing	Use smaller cover image
 
 
 
@@ -237,7 +234,7 @@ Do NOT use it for illegal or unethical activities.
 
 ✅ Acceptable Use
 
-Academic and research projects
+Academic & research projects
 
 Cybersecurity education
 
@@ -248,7 +245,7 @@ Personal experimentation
 
 ❌ Prohibited Use
 
-Illegal or malicious actions
+Illegal or malicious activities
 
 Copyright or data theft
 
@@ -294,4 +291,5 @@ Project: Steganography Tool
 “Knowledge is power, but responsibility is key.” — D.Chyper
 
 </div>
- ```
+```
+---
