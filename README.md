@@ -35,7 +35,7 @@
 **Steganography Pro** is a browser-based steganography toolkit that allows you to hide any file within an image using three distinct methods — **Basic LSB**, **Enhanced LSB**, and **File Append**.  
 Everything runs locally on your browser using the **Canvas API**, ensuring no data leaves your device.
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+---
 
 ## ✨ Features
 
@@ -46,7 +46,7 @@ Everything runs locally on your browser using the **Canvas API**, ensuring no da
 - 🔐 **Optional Password Field** – For extra protection before encoding  
 - 🌐 **Client-Side Only** – 100% local, no server upload  
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+---
 
 ## 🚀 Quick Start
 
@@ -61,116 +61,112 @@ python -m http.server 8000
 # Then open http://localhost:8000
 ```
 
+---
+
 ⚡ Methods
 
-_________________________________________________________________________________
-Method	       Stealth	    Capacity	Speed	     Best For
-—————————————————————————————————————————————————————————————————————————————————
-Basic LSB	    ⭐⭐⭐⭐⭐  ~12.5%	     Fast	    Maximum secrecy, small files
-—————————————————————————————————————————————————————————————————————————————————
-Enhanced LSB	⭐⭐⭐⭐	  ~25%	      Medium	  Balanced use, medium files
-—————————————————————————————————————————————————————————————————————————————————
-File Append	  ⭐⭐	      Unlimited	  Instant	  Large or educational file hiding
-—————————————————————————————————————————————————————————————————————————————————
+Method	      Stealth	    Capacity	 Speed	  Best For
 
-🔍 Basic LSB (Least Significant Bit)
+Basic LSB	    ⭐⭐⭐⭐⭐	~12.5%	   Fast	    Maximum secrecy, small files
+Enhanced LSB	⭐⭐⭐⭐	  ~25%	     Medium	  Balanced performance
+File Append	  ⭐⭐	      Unlimited	 Instant	Educational use, large files
+
+
+🧩 Basic LSB (Least Significant Bit)
 
 pixel = (pixel & 0xFE) | dataBit
 
 Maximum stealth, visually undetectable
 
-Lower capacity (best for small files)
-
-Ideal for sensitive messages or documents
+Lower capacity, ideal for small hidden files
 
 
-⚡ Enhanced LSB (2-bit Encoding)
+⚙️ Enhanced LSB (2-bit Encoding)
 
 pixel = (pixel & 0xFC) | dataBits
 
-Twice the capacity of Basic LSB
+2× the capacity of Basic LSB
 
-Slightly reduces image quality
-
-Ideal for medium files
+Slight image quality tradeoff
 
 
 💾 File Append Method
 
 [IMAGE_DATA] + [HEADER] + [SECRET_DATA]
 
-Maximum capacity (supports up to 100MB)
+Up to 100MB capacity
 
-Easily detectable (for educational purposes)
+Easily detectable (for study/testing use)
 
-Great for quick tests and demonstrations
-
-
-
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
-🧩 How It Works
-
-1. Basic LSB – Embeds 1 bit of data in each RGB channel.
-
-
-2. Enhanced LSB – Uses 2 bits per RGB channel for double capacity.
-
-
-3. File Append – Appends data at the end of the image file with a custom STEGAPPN header.
+Best for large file demonstrations
 
 
 
-🧠 All processing is done locally in your browser using the Canvas API, so no data is ever uploaded or stored externally.
+---
+
+🔍 How It Works
+
+1. Basic LSB – Hides 1 bit per RGB channel
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+2. Enhanced LSB – Hides 2 bits per RGB channel
+
+
+3. File Append – Attaches data at the end of the image file with a header
+
+
+
+🧠 All encoding and decoding are handled locally using browser APIs (Canvas + FileReader).
+No server communication, no uploads.
+
+
+---
 
 📖 Usage Guide
 
-Encoding Files
+Encoding
 
-1. Choose your method (Basic, Enhanced, or Append)
+1. Select a method (Basic / Enhanced / Append)
 
 
 2. Upload your cover image
 
 
-3. Select the file to hide
+3. Upload your secret file
 
 
-4. (Optional) Add a password
+4. (Optional) Enter a password
 
 
-5. Click Hide File in Image and download your stego image
+5. Click Hide File in Image and download the stego image
 
 
 
-Decoding Files
+Decoding
 
 1. Upload the stego image
 
 
-2. (Optional) Enter password
+2. (Optional) Enter the password
 
 
-3. Click Extract Hidden File and download the recovered file
+3. Click Extract Hidden File and download your extracted data
 
 
 
 💡 Pro Tips
 
-Always use PNG format for cover images (lossless compression)
+Always use PNG format for lossless images
 
-Use Basic LSB for small confidential files
+Use Basic LSB for secret text/documents
 
-Use File Append for large or test files
+Use File Append for large or demo files
 
-Test extraction before sharing images
+Test decoding before sharing images
 
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+---
 
 🧱 Tech Stack
 
@@ -178,124 +174,124 @@ Layer	Technology	Purpose
 
 Frontend	HTML5, CSS3, JavaScript	Core web application
 Styling	CSS Grid & Flexbox	Responsive layout
-Processing	Canvas API	Image manipulation
-UI	Vanilla JS + Emojis	Lightweight design
+Logic	Canvas API	Image manipulation
+UI/UX	Vanilla JS	Smooth animations
 Fonts	Inter (Google Fonts)	Clean typography
 Deployment	GitHub Pages	Free static hosting
 
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+---
 
 🧠 Architecture
 
 steganography-tool/
-├── 📁 css/
-│   └── style.css           # Dark theme styling
-├── 📁 js/
-│   ├── steganography.js    # Core algorithms (3 methods)
-│   ├── ui.js               # UI logic and event handlers
-│   └── theme.js            # Animations and effects
-├── 📁 assets/
-│   └── main-theme.jpg      # Main background image
-├── index.html              # Main web app
-└── README.md               # Documentation
+├── css/
+│   └── style.css
+├── js/
+│   ├── steganography.js
+│   ├── ui.js
+│   └── theme.js
+├── assets/
+│   └── main-theme.jpg
+├── index.html
+└── README.md
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+---
 
 🌐 Browser Support
 
 Browser	Version	Support
 
-Chrome	60+	✅ Full
-Firefox	55+	✅ Full
-Safari	11+	✅ Full
-Edge	  79+	✅ Full
+Chrome	60+	✅
+Firefox	55+	✅
+Safari	11+	✅
+Edge	79+	✅
 
 
-🧩 Requires a modern browser with Canvas and File API support.
+> Works on all modern browsers supporting Canvas & File APIs.
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🧪 Troubleshooting
+---
+
+🧰 Troubleshooting
 
 Issue	Cause	Solution
 
 File too large	Exceeds method capacity	Use File Append
-Extraction fails	Wrong password or method	Verify original settings
-Image quality drops	Enhanced LSB on low-res image	Use higher-quality PNG
-Browser crash	Processing too large image	Try smaller cover images
+Extraction fails	Wrong password or method	Verify correct settings
+Image quality drops	Using Enhanced LSB	Use higher-res PNG
+Browser crashes	Processing very large images	Reduce image size
 
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+---
 
 ⚠️ Disclaimer
 
-This tool is built for educational and research purposes only in cybersecurity and digital forensics.
+This tool is built for educational and research purposes only.
+Do NOT use it for illegal or unethical activities.
 
 ✅ Acceptable Use
 
-Academic & research projects
+Academic and research projects
 
 Cybersecurity education
 
-Digital forensics study
+Digital forensics learning
 
-Personal learning
+Personal experimentation
 
 
 ❌ Prohibited Use
 
-Illegal or malicious activities
+Illegal or malicious actions
 
-Copyright/data theft
+Copyright or data theft
 
 Malware embedding
 
-Espionage or unauthorized hiding
+Espionage or covert data hiding
 
 
-Use this tool responsibly and ethically.
+> Use this tool responsibly and ethically.
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
+
+---
 
 📜 License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+---
 
 👨‍💻 Author
 
 D.Chyper — Cybersecurity Enthusiast 🇮🇩
 
-🏠 Indonesian User Explorer
+🧭 Indonesian User Explorer
 
 💻 Open Source Contributor
 
 🎓 Computer Engineering Student
 
-🔭 Passionate about digital security research
+🧠 Passionate about cybersecurity research
 
 
 GitHub: @your-bit
-Project Link: https://github.com/your-bit/steganography-tool
+Project: Steganography Tool
 
 
-—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+---
 
 <div align="center">⭐ If this project helped you, give it a star!
 “Knowledge is power, but responsibility is key.” — D.Chyper
-<div>
+
+</div>
+ ```
