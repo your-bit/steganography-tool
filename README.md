@@ -197,7 +197,6 @@ steganography-tool/
 ├── index.html
 └── README.md
 
-
 ---
 
 🌐 Browser Support
