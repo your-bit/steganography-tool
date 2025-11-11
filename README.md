@@ -180,23 +180,28 @@ Deployment	GitHub Pages	Free static hosting
 
 ---
 
-<br>🧩 Architecture
+## 🧩 Architectur
 
+```text
 steganography-tool/
+│
 ├── css/
-│   └── style.css
+│   └── style.css              # Dark theme styling
+│
 ├── js/
-│   ├── steganography.js
-│   ├── ui.js
-│   └── theme.js
+│   ├── steganography.js       # Core algorithms (3 methods)
+│   ├── ui.js                  # UI logic and event handlers
+│   └── theme.js               # Theme manager and animations
+│
 ├── assets/
-│   └── main-theme.jpg
-├── index.html
-└── README.md
+│   └── main-theme.jpg         # Main background image
+│
+├── index.html                 # Main web app
+└── README.md                  # Documentation
 
 
 ---
-
+```
 <br>🌐 Browser Support
 
 Browser	Version	Support
