@@ -88,9 +88,9 @@ Slight image quality tradeoff
 
 
 <br>💾 File Append Method
-```
-[IMAGE_DATA] + [HEADER] + [SECRET_DATA]
-```
+
+> [IMAGE_DATA] + [HEADER] + [SECRET_DATA]
+
 Up to 100MB capacity
 
 Easily detectable (for study/testing use)
