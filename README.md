@@ -207,10 +207,10 @@ steganography-tool/
 
 Browser	Version	Support
 
-Chrome	60+	✅
-Firefox	55+	✅
-Safari	11+	✅
-Edge	79+	✅
+> Chrome	60+	✅
+  Firefox	55+	✅
+  Safari	11+	✅
+  Edge	  79+	✅
 
 
 > Works on all modern browsers supporting Canvas & File APIs.
