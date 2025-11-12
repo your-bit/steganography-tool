@@ -47,7 +47,7 @@ Everything runs locally on your browser using the **Canvas API**, ensuring no da
 
 ### 🧩 Online Demo  
 👉 [GitHub Pages Live Demo](https://your-bit.github.io/steganography-tool)
-
+👉 (https://steganography-weld.vercel.app/)
 <br>
 
 ### ⚙️ Local Setup
@@ -61,13 +61,13 @@ python -m http.server 8000
 ---
 
 ⚡ Methods
+```text
+Method	      Stealth	   Capacity	  Speed	     Best For
 
-Method	Stealth	Capacity	Speed	Best For
-
-Basic LSB	⭐⭐⭐⭐⭐	~12.5%	Fast	Maximum secrecy, small files
-Enhanced LSB	⭐⭐⭐⭐	~25%	Medium	Balanced performance
-File Append	⭐⭐	Unlimited	Instant	Educational use, large files
-
+Basic LSB	   ⭐⭐⭐⭐⭐	 ~12.5%	     Fast	    Maximum secrecy, small files
+Enhanced LSB ⭐⭐⭐⭐	   ~25%	       Medium	  Balanced performance
+File Append	 ⭐⭐	        Unlimited	 Instant	Educational use, large files
+```
 
 <br>🧩 Basic LSB (Least Significant Bit)
 
